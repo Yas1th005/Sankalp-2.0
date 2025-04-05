@@ -32,18 +32,18 @@ function App() {
         <motion.div {...fadeInUp}>
           <Hero />
         </motion.div>
-        <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
+        {/* <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
           <Features />
-        </motion.div>
+        </motion.div> */}
         <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
           <Programs />
         </motion.div>
         <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
           <About />
         </motion.div>
-        <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
+        {/* <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
           <WhyChoose />
-        </motion.div>
+        </motion.div> */}
         <motion.div {...fadeInUp} transition={{ delay: 0.5 }}>
           <Services />
         </motion.div>

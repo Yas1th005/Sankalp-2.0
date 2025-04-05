@@ -153,12 +153,12 @@ const Features = () => {
   };
 
   return (
-    <section className="py-16 bg-dark-200 overflow-hidden relative">
+    <section className="py-16 overflow-hidden relative">
       {/* Background container - using Hero's 3D background */}
-      <div ref={mountRef} className="absolute inset-0 z-0" style={{ pointerEvents: 'none' }} />
+      
       
       {/* Gradient overlay for better transition from hero section */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-100/80 to-dark-200/80 z-0" /> {/* Reduced opacity from 90 to 80 */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black to-[#201f21] z-0" /> {/* Reduced opacity from 90 to 80 */}
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div

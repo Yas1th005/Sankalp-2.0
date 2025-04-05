@@ -257,7 +257,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 overflow-hidden relative bg-dark-200 min-h-screen flex items-center">
+    <section id="about" className="mx-auto py-20 overflow-hidden relative bg-dark-200 min-h-screen flex items-center">
       {/* 3D Background container - non-reactive */}
       <div ref={mountRef} className="absolute inset-0 z-0" style={{ pointerEvents: 'none' }} />
       
@@ -290,7 +290,7 @@ const About = () => {
         }}
       />
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="w-[90vw] container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image Section - with reactive animations */}
           <motion.div

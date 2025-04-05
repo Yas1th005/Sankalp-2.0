@@ -336,7 +336,7 @@ const FAQ = () => {
         </motion.div>
 
         <motion.div 
-          className="max-w-3xl mx-auto grid gap-6"
+          className="w-[90vw] flex flex-col justify-center items-center gap-3"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -369,7 +369,7 @@ const FAQ = () => {
               
               {/* Main FAQ item button */}
               <motion.button
-                className={`w-full text-left p-6 rounded-lg bg-dark-300/80 backdrop-blur-sm border border-dark-400 flex items-center justify-between relative z-10 ${
+                className={`text-left p-2 rounded-lg bg-transparent backdrop-blur-sm border border-dark-400 flex items-center justify-between relative z-10 w-[80vw] ${
                   activeIndex === index ? 'bg-dark-400/80' : 'hover:bg-dark-400/60'
                 }`}
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
@@ -379,7 +379,7 @@ const FAQ = () => {
                 variants={glowAnimation}
               >
                 <motion.div 
-                  className="text-lg font-medium text-white flex items-center gap-2"
+                  className="text-base font-medium text-white flex items-center gap-2"
                   whileHover={{
                     color: "#a78bfa",
                     x: 5,

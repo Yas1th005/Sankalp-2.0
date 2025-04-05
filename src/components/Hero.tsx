@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Code, Zap, Rocket } from 'lucide-react';
 import Typewriter from 'typewriter-effect';
 import * as THREE from 'three';
+import { SphereAnimation } from '../extras/Sphere';
+import Features from './Features';
 
 const Hero = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -143,11 +145,12 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="pt-28 pb-20 md:pt-32 md:pb-24 overflow-hidden relative">
+    <div>
+<section id="home" className="h-[100vh] flex justify-center items-center overflow-hidden relative bg-black">
       {/* 3D Background container */}
       <div ref={mountRef} className="absolute inset-0 z-0" style={{ pointerEvents: 'none' }} />
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 w-[90vw]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial="hidden"
@@ -178,7 +181,7 @@ const Hero = () => {
               variants={titleAnimation}
             >
               <motion.span
-                className="inline-block"
+                className="inline-block text-5xl"
                 variants={subtitleAnimation}
               >
                 <Typewriter
@@ -267,83 +270,21 @@ const Hero = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 200, damping: 25 }}
             >
-              <motion.img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
-                alt="Students collaborating" 
-                className="rounded-2xl shadow-2xl w-full h-auto object-cover"
-                initial={{ filter: "brightness(0.8)" }}
-                whileHover={{ filter: "brightness(1)" }}
-                transition={{ duration: 0.3 }}
-              />
+              <SphereAnimation/>
               
               <motion.div
-                className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-600/20 to-transparent"
+                className="absolute inset-0 rounded-2xl"
                 whileHover={{ opacity: 0.8 }}
                 transition={{ duration: 0.3 }}
               />
-            </motion.div>
-            
-            <motion.div 
-              className="absolute -top-10 -left-10 bg-dark-300 p-4 rounded-xl shadow-lg flex items-center gap-3 z-20 border border-dark-400"
-              variants={cardAnimation}
-              whileHover={{ 
-                scale: 1.05,
-                rotate: -5,
-                boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
-              }}
-            >
-              <motion.div 
-                className="bg-primary-900/30 p-2 rounded-lg"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 360],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <Rocket className="h-6 w-6 text-primary-400" />
-              </motion.div>
-              <div>
-                <p className="text-sm font-medium text-white">100% Placement</p>
-                <p className="text-xs text-gray-400">Guaranteed Success</p>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              className="absolute -bottom-8 -right-8 bg-dark-300 p-4 rounded-xl shadow-lg flex items-center gap-3 z-20 border border-dark-400"
-              variants={cardAnimation}
-              whileHover={{ 
-                scale: 1.05,
-                rotate: 5,
-                boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
-              }}
-            >
-              <motion.div 
-                className="bg-primary-900/30 p-2 rounded-lg"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, -360],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <Code className="h-6 w-6 text-primary-400" />
-              </motion.div>
-              <div>
-                <p className="text-sm font-medium text-white">Real Projects</p>
-                <p className="text-xs text-gray-400">Industry Experience</p>
-              </div>
             </motion.div>
           </motion.div>
         </div>
       </div>
     </section>
+    <Features/>
+    </div>
+    
   );
 };
 
